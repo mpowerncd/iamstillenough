@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>I am still enough</title>
+  <meta name="description" content="Simple food, gentle routines, and real-life systems." />
+
+  <!-- Canonical (GitHub Pages for now) -->
+  <link rel="canonical" href="https://mpowerncd.github.io/iamstillenough/" />
+
+  <!-- Social previews -->
+  <meta property="og:site_name" content="I am still enough" />
+  <meta property="og:title" content="I am still enough" />
+  <meta property="og:description" content="Simple food, gentle routines, and real-life systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mpowerncd.github.io/iamstillenough/" />
+  <meta property="og:image" content="https://mpowerncd.github.io/iamstillenough/assets/images/feature-a.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="I am still enough" />
+  <meta name="twitter:description" content="Simple food, gentle routines, and real-life systems." />
+  <meta name="twitter:image" content="https://mpowerncd.github.io/iamstillenough/assets/images/feature-a.jpg" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img
+          src="assets/images/logo.png"
+          alt="i am still enough"
+          class="brand-logo"
+          width="900"
+          height="260"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+
+      <p class="tagline">Simple food, gentle routines, and real-life systems.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="feature" aria-label="Featured content">
+      <div class="container">
+        <div class="feature-frame">
+          <div class="collage" aria-label="Featured content collage">
+            <a class="card card-a" href="#start-here-section">
+              <img
+                src="assets/images/feature-a.jpg"
+                alt="Cozy table scene"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+
+            <a class="card card-b" href="#start-here-section">
+              <img
+                src="assets/images/feature-b.jpg"
+                alt="Simple nourishing meal"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+
+            <a class="start-here" href="#start-here-section">
+              <span>START HERE</span>
+            </a>
+          </div>
+
+          <div class="feature-captions">
+            <a class="caption" href="recipes/index.html">
+              Easy weeknight dinners<br><span>that don’t feel like work</span>
+            </a>
+            <a class="caption" href="routines/index.html">
+              A 10-minute morning reset<br><span>when energy is low</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paths" id="start-here-section" aria-label="Browse categories">
+      <div class="container">
+        <div class="paths-grid">
+          <a class="path" href="recipes/index.html">
+            <h2>Recipes</h2>
+            <p>Easy, balanced meals for busy days</p>
+          </a>
+
+          <a class="path" href="routines/index.html">
+            <h2>Routines &amp; Focus</h2>
+            <p>Systems that work with real energy levels</p>
+          </a>
+
+          <a class="path" href="hormone-aware/index.html">
+            <h2>Hormone-Aware Living</h2>
+            <p>Support, gently framed</p>
+          </a>
+
+          <a class="path" href="mom-life/index.html">
+            <h2>Mom Life</h2>
+            <p>Postpartum rhythms, keepsakes, care</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Latest</h2>
+          <p class="section-intro">A gentle place to start.</p>
+        </header>
+
+        <div id="latest-post" class="post-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Built slowly. Meant to help.<br>
+        <span class="footer-soft">You were always enough, and you’re still enough ♡</span><br>
+        <span class="footer-legal">© 2025 I Am Still Enough. All rights reserved.</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/posts.js"></script>
+
+  <script>
+    const latestContainer = document.getElementById("latest-post");
+
+    if (latestContainer && window.POSTS && window.POSTS.length) {
+      const latest = [...window.POSTS]
+        .sort((a, b) => (b.date || "").localeCompare(a.date || ""))[0];
+
+      const card = document.createElement("a");
+      card.className = "post-card";
+      card.href = latest.url;
+
+      card.innerHTML = `
+        <h3>${latest.title}</h3>
+        <p>${latest.description}</p>
+        <span class="post-meta">Read →</span>
+      `;
+
+      latestContainer.appendChild(card);
+    }
+  </script>
+</body>
+</html>

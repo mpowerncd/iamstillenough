@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- CHANGE THESE FOR EACH POST -->
+  <title>Article Title | i am still enough</title>
+  <meta name="description" content="One-sentence description for this article." />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a id="logo-home" href="../index.html" class="brand" aria-label="Home">
+        <img
+          src="../assets/images/logo.png"
+          alt="i am still enough"
+          class="brand-logo"
+        />
+      </a>
+      <p class="tagline">Simple food, gentle routines, and real-life systems.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="container">
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header">
+          <h1>Article Title Goes Here</h1>
+          <p class="article-intro">
+            Write a short, kind introduction that lets the reader exhale.
+            Two or three sentences is plenty.
+          </p>
+        </header>
+
+        <!-- ARTICLE CONTENT -->
+        <div class="article-content">
+          <h2>Section Heading</h2>
+          <p>
+            Start writing here. Keep paragraphs short.
+            White space is part of the calm.
+          </p>
+
+          <h2>Another Section</h2>
+          <p>
+            This template is intentionally simple.
+            You don’t need more structure than this.
+          </p>
+
+          <p>
+            You can add lists if it helps:
+          </p>
+
+          <ul>
+            <li>One gentle point</li>
+            <li>Another helpful thought</li>
+            <li>Nothing overwhelming</li>
+          </ul>
+
+          <p>
+            Closing thoughts go here. Reassuring. Grounded.
+          </p>
+        </div>
+
+        <!-- BACK LINK -->
+        <p class="section-back">
+          <a id="home-link" href="../index.html">← Back to Home</a>
+        </p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built slowly. Meant to help.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/config.js"></script>
+  <script>
+    // Keep home links working in local testing
+    const homeHref = "../" + (window.SITE && window.SITE.HOME ? window.SITE.HOME : "index.html");
+
+    const homeLink = document.getElementById("home-link");
+    if (homeLink) homeLink.href = homeHref;
+
+    const logoHome = document.getElementById("logo-home");
+    if (logoHome) logoHome.href = homeHref;
+  </script>
+</body>
+</html>

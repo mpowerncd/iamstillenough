@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recipes | i am still enough</title>
+  <meta name="description" content="Easy, balanced meals for busy days — simple, calm, and realistic." />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a id="logo-home" href="../index.html" class="brand" aria-label="Home">
+        <img src="../assets/images/logo.png" alt="i am still enough" class="brand-logo" />
+      </a>
+      <p class="tagline">Simple food, gentle routines, and real-life systems.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h1 class="section-title">Recipes</h1>
+          <p class="section-intro">Easy, balanced meals for busy days — calm, realistic, and repeatable.</p>
+        </header>
+
+        <div id="recipes-list" class="post-list"></div>
+
+        <p class="section-back">
+          <a id="home-link" href="../index.html">← Back to Home</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built slowly. Meant to help.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/posts.js"></script>
+  <script src="../assets/config.js"></script>
+
+  <script>
+    // Render the recipes list
+    const container = document.getElementById("recipes-list");
+
+    const recipes = (window.POSTS || [])
+      .filter(p => p.section === "Recipes")
+      .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+    const safeLink = (url) => url.startsWith("http") ? url : "../" + url;
+
+    if (!recipes.length) {
+      container.innerHTML = `
+        <div class="post-card" style="pointer-events:none;">
+          <h2>Coming soon</h2>
+          <p>Simple recipes are on the way — starting with easy staples and weeknight dinners.</p>
+          <span class="post-meta">Soon →</span>
+        </div>
+      `;
+    } else {
+      recipes.forEach(post => {
+        const card = document.createElement("a");
+        card.className = "post-card";
+        card.href = safeLink(post.url);
+
+        card.innerHTML = `
+          <h2>${post.title}</h2>
+          <p>${post.description}</p>
+          <span class="post-meta">Read →</span>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+  </script>
+
+  <script>
+    // Make logo + back link always point home correctly in local testing
+    const homeHref = "../" + (window.SITE && window.SITE.HOME ? window.SITE.HOME : "index.html");
+
+    const homeLink = document.getElementById("home-link");
+    if (homeLink) homeLink.href = homeHref;
+
+    const logoHome = document.getElementById("logo-home");
+    if (logoHome) logoHome.href = homeHref;
+  </script>
+</body>
+</html>

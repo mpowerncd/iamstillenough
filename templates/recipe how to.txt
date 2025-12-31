@@ -1,0 +1,32 @@
+How you use this going forward (no thinking required)
+Your rule from now on
+
+Keep this file here forever
+
+templatesrecipe-template.html
+
+
+When you want a new recipe
+
+Copy recipe-template.html
+
+Paste it into
+
+recipesyour-recipe-slugindex.html
+
+
+Then change only content, not structure
+
+Title
+
+Description
+
+Ingredients
+
+Instructions
+
+Image filename
+
+Date
+
+👉 Do not touch paths unless I tell you to.

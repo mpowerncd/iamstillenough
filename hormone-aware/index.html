@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hormone-Aware Living | i am still enough</title>
+  <meta name="description" content="Gentle, hormone-aware support framed with care and realism." />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a id="logo-home" href="../index.html" class="brand" aria-label="Home">
+        <img src="../assets/images/logo.png" alt="i am still enough" class="brand-logo" />
+      </a>
+      <p class="tagline">Simple food, gentle routines, and real-life systems.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h1 class="section-title">Hormone-Aware Living</h1>
+          <p class="section-intro">
+            Support, gently framed. This space will hold hormone-aware routines, food,
+            and rhythms — built slowly and thoughtfully.
+          </p>
+        </header>
+
+        <div class="post-list">
+          <div class="post-card" style="pointer-events:none;">
+            <h2>Coming soon</h2>
+            <p>Hormone-aware content is on the way. Nothing rushed. Nothing overwhelming.</p>
+            <span class="post-meta">Soon →</span>
+          </div>
+        </div>
+
+        <p class="section-back">
+          <a id="home-link" href="../index.html">← Back to Home</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built slowly. Meant to help.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/config.js"></script>
+  <script>
+    const homeHref = "../" + (window.SITE && window.SITE.HOME ? window.SITE.HOME : "index.html");
+
+    const homeLink = document.getElementById("home-link");
+    if (homeLink) homeLink.href = homeHref;
+
+    const logoHome = document.getElementById("logo-home");
+    if (logoHome) logoHome.href = homeHref;
+  </script>
+</body>
+</html>

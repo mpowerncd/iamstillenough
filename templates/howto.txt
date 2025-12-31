@@ -1,0 +1,17 @@
+When you write a new post:
+
+Copy templates/article.html
+
+Paste it into the right folder (e.g. routines/)
+
+Rename the file
+
+Edit only:
+
+<title>
+
+<meta description>
+
+<h1>
+
+the writing
